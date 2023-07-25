@@ -31,6 +31,10 @@ import { USER_SERVICE } from '../../user/services';
 import { ICreateUser, IUserService } from 'user';
 import { EMAIL_SERVICE, SMS_SERVICE } from '../../notification/services';
 import { IEmailService, ISmsService } from 'notification';
+import { CONTRACT_REPOSITORY } from '../../contract/repositories';
+import { IContract, IContractRepository } from 'contract';
+import { ORDER_SERVICE } from '../../order/services';
+import { IOrderService } from 'order';
 import { OAuthType } from '../../../types/auth/IAuthDTO';
 
 export const AUTH_SERVICE = Symbol('AuthService');
@@ -44,6 +48,8 @@ export class AuthService implements IAuthService {
     @inject(USER_SERVICE) private readonly userService: IUserService,
     @inject(EMAIL_SERVICE) private readonly emailService: IEmailService,
     @inject(SMS_SERVICE) private readonly smsService: ISmsService,
+    @inject(CONTRACT_REPOSITORY) private readonly contractRepository: IContractRepository,
+    @inject(ORDER_SERVICE) private readonly orderService: IOrderService,
   ) {}
 
   public async signup(email: string): Promise<Partial<IAuth & { signupCompletionToken?: string }>> {
@@ -189,7 +195,7 @@ export class AuthService implements IAuthService {
     return this.authPresenter.serialize(updatedAuth as IAuth, ['email', 'hasVerifiedEmail']);
   }
 
-  public async login(payload: { email: string; password: string }): Promise<ILoginOutcome> {
+  public async login(payload: { email: string; password: string; contractId?: string }): Promise<ILoginOutcome> {
     const dto = this.authDTO.login(payload);
     logger.info(`login payload ${JSON.stringify(dto)}`);
     const auth = await this.findAuth({ email: dto.email });
@@ -216,6 +222,10 @@ export class AuthService implements IAuthService {
     const tokens = await createTokens(String(auth.id), dto.primaryKey, dto.secondaryKey);
 
     logger.info('tokens created');
+
+    if (dto.contractId) {
+      await this._updateContractRecipientId({ contractId: dto.contractId, email: dto.email });
+    }
 
     const user = this.authPresenter.serialize(updatedAuth as IAuth, ['email', 'hasVerifiedEmail']);
 
@@ -377,6 +387,20 @@ export class AuthService implements IAuthService {
   public async findAuth(query: Record<string, unknown>): Promise<IAuth | null> {
     logger.info(`find auth initiated with: ${JSON.stringify(query)}`);
     return (await this.authRepository.findOne(query)) as IAuth | null;
+  }
+
+  private async _updateContractRecipientId(payload: { contractId: string; email: string }): Promise<IContract | null> {
+    logger.info(`_updateContractRecipientId initiated with: ${JSON.stringify(payload)}`);
+    const user = await this.userService.read({ email: payload.email });
+
+    logger.info(`update contract recipientId initiated with: ${JSON.stringify(user)}`);
+    const query = { id: payload.contractId };
+    const update = { recipientId: user.id as string, inviteAcceptanceDate: new Date() };
+
+    const contract = await this.contractRepository.update(query, update);
+
+    await this.orderService.createRecipient({ recipientId: user.id as string, contractId: payload.contractId });
+    return contract;
   }
 
   private async _editAuth(query: FilterQuery<IAuth>, update: UpdateQuery<IAuth>): Promise<IAuth | null> {
