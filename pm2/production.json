@@ -1,0 +1,12 @@
+{
+  "apps": [
+      {
+          "name"      : "storebridger-backend",
+          "script"    : "./dist/server.bundle.js",
+          "log_date_format" : "YYYY-MM-DD HH:mm Z",
+          "env": {
+              "PORT": 4000
+          }
+      }
+    ]
+}

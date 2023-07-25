@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+  /* Normalizers */
+  *{
+    box-sizing: border-box;
+  }
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
+  /* Components */
+  .btn{
+    border: none;
+    border-radius: 5px;
+    padding: 16px 24px;
+    transition: all .5s;
+    width: 180px;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .btn-primary{
+    background: rgba(59, 40, 204, 1);
+    color: white !important;
+  }
+  .btn-secondary{
+    border: 1px solid rgba(59, 40, 204, 1);
+    background: transparent;
+    color: rgba(59, 40, 204, 1) !important;;
+  }
+  .btn:hover{
+    opacity: 0.5;
+  }
+  .text{
+    font-size: 16px;
+  }
+  .grey-text{
+    color: grey;
+  }
+  .purple-text{
+    color: rgba(59, 40, 204, 1);
+  }
+  /* Template Components */
+  .block{
+    display: block;
+  }
+  .center{
+    margin: 0 auto;
+  }
+  .container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding:  24px;
+  }
+  .logo-div{
+    width: 100%;
+  }
+  .template-header{
+    text-align: center;
+  }
+  .illustration-div{
+    height: 200px;
+    width: 100%;
+    background: rgba(225, 221, 255, 1);
+    border-radius: 10px;
+  }
+  .illustration{
+    max-height: 100%;
+    max-width: 250px;
+  }
+  .cta-div{
+    width: 100%;
+    padding: 8px 0;
+  }
+  .footer{
+    width: 100%;
+  }
+  .footer-main{
+    width: 100%;
+    border-top: 1px solid #DEE2E6;
+    border-bottom:  1px solid #DEE2E6;
+  }
+  .invite-info{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo-div">
+    <img src="https://res.cloudinary.com/ddlhom1zz/image/upload/v1680856851/Images/logo-without-text_or8yrl.png" alt="logo" class="block center"/>
+  </div>
+  <h1 class="template-header">Welcome Friend !!!</h1>
+  <div class="illustration-div">
+    <img src="https://res.cloudinary.com/ddlhom1zz/image/upload/v1680858297/Images/pixeltrue-space-discovery-1_1_zczwgh.png" alt="illustration" class="illustration block center"/>
+  </div>
+</div>
+<div class="container">
+  <h3 class="text">Hello there!</h3>
+
+  <p class="text">
+    Thank you for signing up with Storebridger! We’re thrilled to have you as a new member of our community
+  </p>
+  <p class="text">To verify your email address and get started, please click on the button below:</p>
+
+  <div class="cta-div">
+    <a href="{{verificationUrl}}" target="_blank" class="btn btn-primary block center">Verify Email Address</a>
+  </div>
+
+  <p class="text">
+    If you have a questions or need any assistance, feel free to reach out to our support team at <span class="purple-text">storebridger@gmail.com</span>
+  </p>
+
+  <p class="text">
+    Thank you again for joining us. We can’t wait to see all that we can achieve together!
+  </p>
+
+  <p class="salutation text">
+    <span class="block">Best regards,</span>
+    <span class="block purple-text">Storebridger Team</span>
+  </p>
+
+</div>
+<div class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <strong class="text">
+        Did you receive this email by mistake or have any questions?
+      </strong>
+      <p class="text">
+        You can contact the sender by clicking the button below
+      </p>
+      <a href="#" class="btn btn-secondary block center">Contact Us</a>
+    </div>
+  </div>
+  <p class="text grey-text invite-info">This invite will expire in 1 hour</p>
+</div>
+</body>
+</html>

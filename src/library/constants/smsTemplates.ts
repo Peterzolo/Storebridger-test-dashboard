@@ -1,0 +1,2 @@
+export const VERFIFICATION = 'VERFIFICATION';
+export const CONTRACT = 'CONTRACT';

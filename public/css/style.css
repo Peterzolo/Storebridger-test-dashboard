@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+/* Normalizers */
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+}
+/* Components */
+.btn{
+  border: none;
+  border-radius: 5px;
+  padding: 16px 24px;
+  transition: all .5s;
+  width: 180px;
+  text-align: center;
+  font-size: 13px;
+  text-decoration: none;
+  color: inherit;
+}
+.btn-primary{
+  background: rgba(59, 40, 204, 1);
+  color: white !important;
+}
+.btn-secondary{
+  border: 1px solid rgba(59, 40, 204, 1);
+  background: transparent;
+  color: rgba(59, 40, 204, 1) !important;;
+}
+.btn:hover{
+  opacity: 0.5;
+}
+.text{
+  font-size: 16px;
+}
+.grey-text{
+  color: grey;
+}
+.purple-text{
+  color: rgba(59, 40, 204, 1);
+}
+/* Template Components */
+.block{
+  display: block;
+}
+.center{
+  margin: 0 auto;
+}
+.container{
+  max-width: 800px;
+  margin: 0 auto;
+  padding:  24px;
+}
+.logo-div{
+  width: 100%;
+}
+.template-header{
+  text-align: center;
+}
+.illustration-div{
+  height: 200px;
+  width: 100%;
+  background: rgba(225, 221, 255, 1);
+  border-radius: 10px;
+}
+.illustration{
+  max-height: 100%;
+  max-width: 250px;
+}
+.cta-div{
+  width: 100%;
+  padding: 8px 0;
+}
+.footer{
+  width: 100%;
+}
+.footer-main{
+  width: 100%;
+  border-top: 1px solid #DEE2E6;
+  border-bottom:  1px solid #DEE2E6;
+}
+.invite-info{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+
+/*Contract Template Styling*/
+.contract-body {
+    font-family: "Poppins", sans-serif;
+    padding: 25px;
+    margin: auto;
+    width: 718px;
+    font-weight: bold;
+    height: 1vh;
+}
+
+.page-header {
+    text-align: center;
+}
+
+.icon {
+    width: 485px;
+    margin: auto;
+    height: 202px;
+    background: #E1DDFF;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.invitation-title {
+    font-weight: 600;
+}
+
+.review, .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.review-button {
+    background: #3B28CC;
+    color: white;
+    height: 45px;
+    width: 158px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.contact-sender {
+    background-color: white;
+    border: 1px solid #3B28CC;
+    color: #3B28CC;
+    height: 45px;
+    width: 158px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+hr {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.last {
+    color: gray;
+}
+
+.closing-remark {
+    margin: 30px 0px;
+}

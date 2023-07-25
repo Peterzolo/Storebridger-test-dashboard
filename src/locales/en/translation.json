@@ -1,0 +1,322 @@
+{
+  "auth": {
+    "responses": {
+      "login": {
+        "invalidCredentials": "Invalid Credentials",
+        "userNotRegistered": "User not registered"
+      },
+      "logout": {
+        "cannotLogout": "Cannot log user out",
+        "alreadyLogout": "User already logout"
+      },
+      "signup": {
+        "emailNotFound": "Email not found",
+        "userRegisterd": "User already registered",
+        "signupTokenConfirmed": "Signup token already confirmed",
+        "emailConfirmed": "Email has already been verified",
+        "invalidToken": "Token supplied is invalid",
+        "tokenExpired": "Token supplied has expired"
+      }
+    },
+    "validations": {
+      "confirmPassword": {
+        "required": "Confirm Password is required", 
+        "misMatch": "Confirm Password does not match given password"
+      },
+      "email": {
+        "required": "Email is required",
+        "invalid": "Email is invalid",
+        "empty": "Email cannot be empty"
+      },
+      "firstName": {
+        "required": "Firstname is required",
+        "min": "Firstname cannot be less than {{charCount}} characters",
+        "max": "Firstname cannot be greater than {{charCount}} characters"
+      },
+      "lastName": {
+        "required": "Lastname is required",
+        "min": "Lastname cannot be less than {{charCount}} characters",
+        "max": "Lastname cannot be greater than {{charCount}} characters"
+      },
+      "oAuthId": {
+        "google": {
+          "required": "Google OAuthId required"
+        },
+        "facebook": {
+          "required": ""
+        }
+      },
+      "password": {
+        "required": "Password is required",
+        "min": "Password cannot be less than {{charCount}} characters",
+        "max": "Password cannot be greater than {{charCount}} characters",
+        "pattern": "Password must include uppercase,lowercase, numeric and symbolic characters"
+      },
+      "token": {
+        "required": "Token required"
+      }
+    }
+  },
+  "common": {
+    "responses": {
+      "created": "Resource created",
+      "deleted": "Resource deleted",
+      "fetched": "Resource fetched",
+      "notCreated": "Resource not created",
+      "notDeleted": "Resource not deleted",
+      "notFetched": "Resource not fetched",
+      "notFound": "Resource not found",
+      "notUpdated": "Resource not updated",
+      "updated": "Resource updated"
+    }
+  },
+  "contract": {
+    "responses": {
+      "contractSigned": "Contract signed",
+      "categoryNotFound": "Contract category not found",
+      "contractNotFound": "Contract not found",
+      "contractContentTemplateNotFound": "Contract Content Template not found",
+      "notAllowedAccess": "Contract with Id does not exist Or you are not allowed to update the contract",
+      "contractCategoryExists": "Contract Category exists",
+      "recipientNotSigned": "Recipient needs to sign",
+      "inviteeAlreadyExist":"Invitee already exist"
+    },
+    "validations": {
+      "authorRole": {
+        "required": "author role is required",
+        "invalid": "author role is invalid",
+        "empty": "author role is needed"
+      },
+      "categoryId": {
+        "required": "Category id is required",
+        "invalid": "Category id is invalid",
+        "empty": "Category id is needed"
+      },
+      "contractId": {
+        "required": "Contract id is required",
+        "invalid": "Contract id is invalid",
+        "empty": "Contract id is needed"
+      },
+      "recipientId":{
+        "required": "Recipient id is required",
+        "invalid":  "Recipient id is invalid",
+        "empty":"Recipient id is needed"
+      },
+      "title": {
+        "required": "Title id is required",
+        "invalid": "Title id is invalid",
+        "empty": "Title id is needed"
+      },
+      "inviteeEmail": {
+        "required": "Invitee email is required",
+        "invalid": "Invitee email is invalid",
+        "empty": "Invitee email is needed"
+      },
+      "contract":{
+        "required": "Contract is required"
+      }
+   
+    }
+  },
+  "order": {
+    "successResponse": {
+      "fetched": "Order successfully fetched"
+    },
+    "errorResponses": {
+      "notFound": "Order not found"
+    },
+    "create": {
+      "validation": {
+        "contractId": {
+          "required": "Contract id is required",
+          "invalid": "Contract id is invalid",
+          "empty": "Contract id is needed"
+        },
+        "orderItem": {
+          "price": {
+            "required": "Price is required",
+            "invalid": "Price is invalid",
+            "empty": "Price is needed"
+          },
+          "description": {
+            "required": "Description is required",
+            "invalid": "Description is invalid",
+            "empty": "Description is needed"
+          },
+          "condition": {
+            "required": "Condition is required",
+            "invalid": "Condition is invalid",
+            "empty": "Condition is needed"
+          },
+          "quantity": {
+            "required": "Quantity is required",
+            "invalid": "Quantity is invalid",
+            "empty": "Quantity is needed"
+          },
+          "images": {
+            "required": "Images is required",
+            "invalid": "Images is invalid",
+            "empty": "Images is needed"
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "create": {
+      "successResponse": {
+        "created": "Image created successfully"
+      },
+      "validation": {
+        "image": {
+          "required": "image is required"
+        }
+      }
+    },
+    "delete": {
+      "successResponse": {
+        "created": "Image deleted successfully"
+      },
+      "errorResponses": {
+        "failed": "Image delete failed"
+      }
+    }
+  },
+  "user": {
+    "notFound": "User not found",
+    "validations":{
+      "email": {
+        "required": "Email is required",
+        "empty": "Email cannot be empty",
+        "invalid": "Email is invalid"
+      }
+    }
+  },
+  "paymentConfig": {
+    "responses": {
+      "create": {
+        "paymentConfigExists": "Payment config already exists",
+        "paymentConfigCreated": "Payment config created"
+      },
+      "setDefaultPayment": "Payment config updated",
+      "read": {
+        "paymentConfigNotFound": "Payment config not found"
+      }
+    },
+    "validations": {
+      "name": {
+        "required": "Name is required",
+        "empty": "Name cannot be empty",
+        "invalid": "Name is invalid"
+      },
+      "paymentConfigId": {
+        "required": "payment config id is required",
+        "empty": "payment config id cannot be empty",
+        "invalid": "patment config id is invalid"
+      },
+      "providerCode": {
+        "required": "provider code is required",
+        "empty": "provider code cannot be empty"
+      }
+     
+    }
+  },
+  "payment": {
+    "responses": {
+      "initiatePayment": {
+        "initiatePaymentSuccessful": "Initiate payment successful",
+        "initiatePaymentFailed": "Initiate payment failed"
+      },
+      "verification": {
+        "verificationSuccessful": "Payment verification successful",
+        "paymentAlreadyVerified": "Payment already verified",
+        "paymentNotFound": "Payment not found"
+      },
+      "accountNumberVerification": {
+        "notFound": " account number not found, try again"
+      }
+    },
+    "validations": {
+      "amount": {
+        "required": "amount is required",
+        "empty": "amount cannot be empty"
+      },
+      "meta": {
+        "required": "meta is required"
+      },
+      "accountNumber": {
+        "required": "account number is required",
+        "empty": "account number cannot be empty",
+        "invalid": "invalid account number"
+      },
+      "bankCode": {
+        "required": "bank code is required",
+        "empty": "bank code cannot be empty"
+      },
+      "reference": {
+        "required": "Reference is required",
+        "empty": "Reference cannot be empty"
+      },
+       "paymentType": {
+        "required": "Payment type is required",
+        "empty":"Payment type cannot be empty"
+      }
+    }
+  },
+  "wallet": {
+    "responses": {
+      "getWalletBalance": {
+        "getWalletBalanceSuccess": "Wallet balance successful"
+      },
+      "debitWallet": {
+        "insufficientBalance": "Insufficient balance to perform transaction",
+        "debitWalletSuccessful": "Successfully debited wallet"
+      },
+      "getWallet": {
+        "walletNotFound": "Wallet not found",
+        "walletExists": "Wallet already exist"
+      },
+      "creditWallet": {
+        "creditWalletSuccessful": "Successfully credited wallet"
+      }
+    },
+    "validations": {
+      "amount": {
+        "required": "Amount is required",
+        "empty": "Amount can not be empty",
+        "postive": "invalid amount provided"
+      },
+      "pin": {
+        "required": "Pin is required",
+        "empty": "Pin can not be empty",
+        "invalid": "Pin is invalid"
+      },
+      "bankName": {
+        "required": "Bank name is required",
+        "empty": "Bank name can not be empty"
+      },
+      "bankCode": {
+        "required": "Bank code is required",
+        "empty": "Bank code can not be empty",
+        "invalid": "Bank code is invalid"
+      },
+      "accountNumber": {
+        "required": "Account number is required",
+        "empty": "Account number can not be empty",
+        "invalid": "Account number is invalid"
+      }
+    }
+  },
+
+  "walletEntry":{
+    "responses": {
+      "getWalletEntry":{
+        "notFound":"Wallet entry not found"
+      }
+    }
+  },
+  "server": {
+    "initialize": "{{appName}} has been initialize",
+    "started": "Express Server listening on port: {{port}}"
+  }
+}

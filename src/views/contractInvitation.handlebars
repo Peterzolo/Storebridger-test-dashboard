@@ -1,0 +1,156 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Contract Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+  <style>
+    .contract-body {
+      font-family: "Poppins", sans-serif;
+      padding: 25px;
+      margin: auto;
+      width: 718px;
+      font-weight: bold;
+    }
+
+    .logo-div {
+      width: 100%;
+    }
+
+    .template-header {
+      text-align: center;
+    }
+
+    .illustration-div {
+      height: 200px;
+      width: 100%;
+      background: rgba(225, 221, 255, 1);
+      border-radius: 10px;
+    }
+
+    .illustration {
+      max-height: 100%;
+      max-width: 250px;
+    }
+
+    .review,
+    .contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0px;
+    }
+
+    .review-button {
+      background: #3B28CC;
+      color: white;
+      height: 45px;
+      width: 158px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+
+    .contact-sender {
+      background-color: white;
+      border: 1px solid #3B28CC;
+      color: #3B28CC;
+      height: 45px;
+      width: 158px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+
+    hr {
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .last {
+      color: gray;
+    }
+
+    .closing-remark {
+      margin: 30px 0px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 5px;
+      padding: 16px 24px;
+      transition: all .5s;
+      width: 180px;
+      text-align: center;
+      font-size: 13px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .btn-primary {
+      background: rgba(59, 40, 204, 1);
+      color: white !important;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .center {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body class="contract-body">
+  <div class="logo-div">
+    <img src="https://res.cloudinary.com/ddlhom1zz/image/upload/v1680856851/Images/logo-without-text_or8yrl.png"
+      alt="logo" class="block center" />
+  </div>
+  <h1 class="template-header">You have been invited !</h1>
+  <div class="illustration-div">
+      <img src="https://res.cloudinary.com/ddlhom1zz/image/upload/v1680856851/Images/handshake-agreement_v25y1i.png"
+      alt="" class="illustration block center">
+  </div>
+  <div class="invitation">
+    <h2 class="invitation-title"><b>Hello {{user}}</b></h2>
+    <p class="invitation-text">I am very happy to tell you that you are almost done making a purchase with
+      {{vendor}}. You have been invited to attest to the eligibility of the items
+      you are purchasing.
+    </p>
+    <p class="button-indicator">Click on the button below to proceed to sign the contract.</p>
+  </div>
+  <div class="review">
+    <a href="{{invitationUrl}}" target="_blank" class="btn btn-primary block">Review and Sign</a>
+  </div>
+  <div class="steps">
+    <ol class="list">
+      <li class="step">Sign up on Storebridger if you don't have a storebridger account yet. - <a href="">learn
+          more.</a>
+      </li>
+      <li class="step">Review and sign the contrct. - <a href="">learn more.</a></li>
+      <li class="step">Confirm your order. - <a href="">learn more.</a></li>
+    </ol>
+    <p class="more-info">
+      That's it! if you need more information, you can find it <a href="">here.</a>
+    </p>
+    <p class="closing-remark">
+      Cheers,<br> Storebridger Team.
+    </p>
+  </div>
+  <div class="mistake">
+    <hr>
+    <p>Did you receive this email by mistake or have any questions?</p>
+    <p>You can contact the sender by clicking the button below.</p>
+    <div class="contact">
+      <button class="contact-sender">Contact Sender</button>
+    </div>
+    <hr>
+  </div>
+  <p class="last">This invite will expire in 30 days.</p>
+</body>
+
+</html>

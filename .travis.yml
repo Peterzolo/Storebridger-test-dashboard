@@ -1,0 +1,51 @@
+language: node_js
+node_js:
+- stable
+dist: trusty
+services:
+- mongodb
+- redis
+env:
+- NODE_ENV=development PORT=3000
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+before_script:
+- npm run build
+after_success: npm run coverage
+script:
+- nohup npm run start &
+- sleep 3
+- npm run test
+before_deploy: ./scripts/before_deploy.sh
+deploy:
+- provider: s3
+  access_key_id:
+    secure: addnewkey
+  secret_access_key:
+    secure: addnewkey
+  bucket: "storebridger-deployment"
+  skip_cleanup: true
+  upload-dir: travis-build
+  glob: "*.zip"
+  on:
+    branch: staging
+- provider: codedeploy
+  wait_until_deployed: true
+  bucket: "storebridger-deployment"
+  key: travis-build/latest.zip
+  bundle_type: zip
+  access_key_id:
+    secure: addnewkey
+  secret_access_key:
+    secure: addnewkey
+  application: codedeploy
+  deployment_group: ec2_staging_deployment
+  region: us-east-1
+  on:
+    branch: staging
+notifications:
+  slack:
+    secure: addnewkey

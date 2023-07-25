@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es2019",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictFunctionTypes": false,
+    "noImplicitThis": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "outDir": "build",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"],
+      "/src/library/*": ["src/library"]
+    },
+    "types": ["node", "jest"],
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [".templates", "node_modules"],
+  "files": ["src/types/appRequest.d.ts"]
+}
